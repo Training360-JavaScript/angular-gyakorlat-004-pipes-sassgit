@@ -13,15 +13,14 @@ export class FilterPipe implements PipeTransform {
    */
   transform(value: any[], phrase: string, key: string = ''): any {
     // A KÖVETKEZŐ SORT TÁVOLÍTSD EL!!!
-    return value;
+    //return value;
 
     /**
      * FELADAT!
      * Ellenőrzés: ha a value nem tömb, vagy nincs megadva a phrase vagy a key,
      * térj vissza a value változóval.
      */
-
-
+    if (!Array.isArray(value) || !phrase || !key) return value;
 
     /**
      * FELADAT!
@@ -30,7 +29,7 @@ export class FilterPipe implements PipeTransform {
      * 2. A visszatérési érték true, ha valahol szerepel benne a phrase.
      * TIPP: az összehasonlítás előtt a két értéket alakítsd kisbetűsre.
      */
-
+    return value.filter(item => item[key].toString().includes(phrase));
 
   }
 
