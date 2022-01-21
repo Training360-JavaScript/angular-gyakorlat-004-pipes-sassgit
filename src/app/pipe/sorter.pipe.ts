@@ -32,7 +32,7 @@ export class SorterPipe implements PipeTransform {
      * 3. Térj vissza a két string localeCompare metódus által visszaadott
      *  összehasonlításának az eredményével.
      */
-    value.sort((a, b) => 
+    return value.sort((a, b) => 
       typeof a[key] === 'number' && typeof a[key] === 'number' ? 
        a[key] - b[key] : 
        a[key].toString().toLowerCase().localeCompare(b[key].toString().toLowerCase())
