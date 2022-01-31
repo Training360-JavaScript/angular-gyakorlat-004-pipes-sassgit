@@ -29,7 +29,8 @@ export class FilterPipe implements PipeTransform {
      * 2. A visszatérési érték true, ha valahol szerepel benne a phrase.
      * TIPP: az összehasonlítás előtt a két értéket alakítsd kisbetűsre.
      */
-    return value.filter(item => item[key].toString().includes(phrase));
+    const phraseLowerCase:string = phrase.toLowerCase();
+    return value.filter(item => String(item[key]).toLowerCase().includes(phraseLowerCase));
 
   }
 
